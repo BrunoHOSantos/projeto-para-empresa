@@ -19,8 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // ================= USUÁRIOS MOCK =================
   const usuarios = [
     { user: "admin", senha: "123", nome: "Administrador", role: "admin" },
-    { user: "Snake123br", senha: "123", nome: "Bruno Henrique", role: "viewer" },
-    { user: "CarlosSEW", senha: "1234", nome: "Carlos Santos", role: "viewer" }
+    { user: "admin2", senha: "123", nome: "Bruno Henrique", role: "viewer" },
+    { user: "admin3", senha: "1234", nome: "Carlos Santos", role: "viewer" }
   ];
 
   // ================= ESTADO INICIAL =================
@@ -119,7 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (letreiro) {
 
   const mensagensFixas = [
-    "📊 Monitoramento de capacidade em tempo real",
+    "📊 Monitoramento da sua empresa em tempo real",
     "💻 Sistema desenvolvido do zero",
   ];
 
