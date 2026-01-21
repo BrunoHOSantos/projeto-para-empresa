@@ -1,0 +1,396 @@
+html,body{
+    background-color: rgb(180, 185, 185);
+    height: 100%;
+    overflow-y: hidden;
+}
+
+#navbar1 {
+  position: absolute;
+  top: 50px;
+  left: 15vh;
+  right: 20vh;
+  height: 60px;
+  border-radius: 20px;
+  box-shadow: 10px 10px 20px 2px rgb(82, 81, 81);
+  width: calc(90% - 50px);
+  transition: all 0.3s ease;
+}
+
+/* Quando a sidebar expande */
+#navbar1.sidebar-expand {
+  left: 250px;
+  width: calc(100% - 280px);
+}
+
+/* ----------Letreiro Digital Programavel--------------- */
+
+#letreiro-container {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 920px;
+  overflow: hidden;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+#letreiro-texto {
+  display: inline-block;
+  padding-left: 100%;
+  font-weight: 600;
+  font-size: 14px;
+  font-family: "DigitalLetreiro";
+  color: #333;
+  animation: letreiro 14s linear infinite;
+}
+
+@keyframes letreiro {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@font-face {
+  font-family: "DigitalLetreiro";
+  src: url("./font/Minisystem.otf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+/* --------------------------------------------------- */
+
+#sidebar{
+    position: absolute;
+    z-index: 10;
+    background-color: rgb(36, 37, 51);  
+}
+
+#img-sew{
+    margin-top: 25px;
+    margin-left: 35px;
+    margin-bottom: 20px;
+    width: 150px;
+    height: 60px;
+    transition: all 0.3s ease;
+}
+
+.sidebar:not(.expand) #img-sew {
+  width: 40px;
+  height: 20px;
+  margin-left: 12px;
+}
+
+#img-sair{
+    width: 20px;
+    height: 20px;
+}
+
+#botao-nav1,
+#botao-nav2 {
+  position: static;
+}
+
+#botao-nav2 {
+  width: 50px;
+  height: 38px;
+}
+
+#casinha{
+    width: 100px;
+}
+
+#icons-barra,#icons-barra3,
+#icons-barra4,#icons-barra5,
+#icons-barra6{
+    width: 30px;
+    height: 30px;
+    
+}
+
+#icons-barra2{
+    width: 30px;
+    height: 20px;
+    
+}
+
+#click1,#click2,#click3,
+#click4,#loginLink,#userInfo,#click6{
+  display: block;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  text-align: center;
+  padding: 10px;
+  background: transparent;
+  transition: background-color 0.2s ease, opacity 0.2s ease;
+}
+
+#click1:hover,#click2:hover,#click3:hover,
+#click4:hover,#loginLink:hover,#userInfo,#click6:hover {
+  background: #b91d1d;
+  box-shadow: 20px 10px 30px 0px rgb(0, 0, 0)
+}
+
+#espaco{
+    margin: auto;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.botoes-da-pagina{
+    
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 80px;
+
+  height: 110vh;
+
+  justify-content: center; /* eixo horizontal */
+  align-content: center;   /* eixo vertical 🔥 */
+  
+  
+}
+
+.botoes-da-pagina button {
+  flex: 0 0 calc(33.333% - 20px); /* 3 por linha */
+  max-width: 300px;              /* opcional */
+  box-shadow: 10px 10px 5px 0px rgba(82, 81, 81, 0.384);
+}
+@media (max-width: 1366px){
+
+.botoes-da-pagina{
+    
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 30px;
+
+  height: 115vh;
+  margin-left: 5vw;
+  justify-content: center; /* eixo horizontal */
+  align-content: center;   /* eixo vertical 🔥 */
+  
+  
+    }
+}
+
+#casa1,#casa2,#casa3,#casa4,#casa5,#casa6 {
+    width: 500px;
+    height: 250px;
+
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 0.8s ease forwards;
+}
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+#casa1 { animation-delay: 0.2s; }
+#casa2 { animation-delay: 0.3s; }
+#casa3 { animation-delay: 0.4s; }
+#casa4 { animation-delay: 0.6s; }
+#casa5 { animation-delay: 0.7s; }
+#casa6 { animation-delay: 0.8s; }
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.sidebar {
+  height: 100vh;
+  width: 60px;
+  background: #1e1e1e;
+  transition: width 0.3s ease;
+  overflow: hidden;
+}
+
+.sidebar.expand {
+  width: 220px;
+}
+
+.toggle-btn {
+  width: 100%;
+  padding: 15px;
+  background: #111;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  color: white;
+}
+
+.sidebar li span {
+  font-size: 22px;
+  width: 40px;
+  text-align: center;
+}
+
+.sidebar a p {
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.sidebar.expand a p {
+  opacity: 1;
+}
+
+/* ----------------efeito da janelas excel-------------------- */
+
+.excel-container {
+  position: absolute;
+  top: 170px;
+  left: 130px;
+
+  width: calc(100% - 200px);
+  height: 75vh;
+
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  overflow: auto;
+
+  opacity: 0;
+  transform: translateY(20px);
+
+  /* ⛔ sem transition aqui */
+  pointer-events: none;
+}
+
+.excel-container.show {
+  opacity: 1;
+  transform: translateY(0);
+
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  pointer-events: auto;
+}
+
+.excel-container.sidebar-expand {
+  left: 250px;
+  width: calc(100% - 280px);
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+thead {
+  position: sticky;
+  top: 0;
+  background: #e6e6e6;
+  z-index: 1;
+}
+
+th, td {
+  border: 1px solid #cfcfcf;
+  padding: 6px 10px;
+  text-align: left;
+  white-space: nowrap;
+}
+
+tbody tr:nth-child(even) {
+  background: #fafafa;
+}
+
+tbody tr:hover {
+  background: #eaf2ff;
+}
+
+.spinner-border{
+  margin-top: 500px;
+}
+
+#loading {
+  transition: opacity 0.3s ease;
+}
+
+#loading.hide {
+  opacity: 0;
+  pointer-events: none;
+}
+/* ------------------------Janela de Usuario------------------------- */
+
+.hidden {
+  display: none !important;
+}
+
+.login-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.664);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 9999;
+}
+
+.login-box {
+  background: rgba(255, 255, 255, 0.952);
+  padding: 30px;
+  border-radius: 12px;
+  width: 660px;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+#login-sew{
+  width: 600px;
+  border-radius: 20px;
+}
+
+@media (max-width: 1366px){
+
+  .login-box {
+  background: rgba(255, 255, 255, 0.952);
+  padding: 30px;
+  border-radius: 12px;
+  width: 460px;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  }
+
+  #login-sew{
+  width: 400px;
+  border-radius: 20px;
+    }
+}
+
+#loginForm{
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+#excelTable {
+  display: none;
+}
+
